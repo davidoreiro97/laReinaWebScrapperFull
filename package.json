@@ -1,0 +1,17 @@
+{
+	"name": "webscrappingreina",
+	"version": "1.0.0",
+	"description": "",
+	"main": "main.js",
+	"type": "module",
+	"scripts": {
+		"start": "node main.js"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"axios": "^1.6.7",
+		"puppeteer": "^22.3.0"
+	}
+}
