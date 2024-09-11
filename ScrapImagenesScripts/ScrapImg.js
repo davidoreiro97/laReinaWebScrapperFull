@@ -8,7 +8,7 @@ async function recuperarURLImagenes() {
 	//Esta funcion recupera del JSON las url de cada imagen de cada uno de los productos y los carga en la variable imagenesURL.
 	//Esta envuelto dentro de una promesa ya que fs.readFile no devuelve una promesa
 	return new Promise((resolve, reject) => {
-		const rutaJSON = "../ResultadosScrap/productos.json";
+		const rutaJSON = "./ResultadosScrap/productos.json";
 		fs.readFile(rutaJSON, "utf8", (error, data) => {
 			if (error) {
 				reject(error);
@@ -29,7 +29,7 @@ async function recuperarURLImagenes() {
 
 async function bajarYGuardarImagen(url, nombreArchivoConExtension) {
 	//Con cada url descarga la imagen y la guarda con su nombre en la carpeta imagenes dentro de ResultadosScrap
-	const rutaArchivo = `../ResultadosScrap/imagenesProductos/${nombreArchivoConExtension}`;
+	const rutaArchivo = `./ResultadosScrap/imagenesProductos/${nombreArchivoConExtension}`;
 	const respuesta = await axios({
 		method: "GET",
 		url: url,

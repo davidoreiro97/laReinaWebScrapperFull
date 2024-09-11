@@ -26,7 +26,7 @@ async function generarINSERT(producto) {
 async function leerJsonYGenerarINSERT() {
 	//Esta funcion recupera del JSON los productos y los envía uno a uno a insertBDD que irá generando la consulta SQL.
 	return new Promise((resolve, reject) => {
-		fs.readFile("../ResultadosScrap/productos.json", "utf8", (error, data) => {
+		fs.readFile("./ResultadosScrap/productos.json", "utf8", (error, data) => {
 			if (error) {
 				console.log("Error leyendo el archivo JSON", error);
 				reject();
@@ -45,10 +45,7 @@ async function leerJsonYGenerarINSERT() {
 					} Productos agregados a la consulta insert.`
 				);
 				try {
-					fs.writeFileSync(
-						"../ResultadosScrap/insertSQLScrap.sql",
-						queryINSERT
-					);
+					fs.writeFileSync("./ResultadosScrap/insertSQLScrap.sql", queryINSERT);
 					console.log(
 						"Consulta SQL guardada en /ResultadosScrap/insertScrap.sql"
 					);
